@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réinitialiser votre mot de passe</title>
+    <link rel="stylesheet" href="recupMDP.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href='login.php'><img src="awb3.0.png" alt="Logo" class="logo"></a>
+            </div>
+            <nav>
+                <a href="login.php">PROFESSIONNEL</a>
+            </nav>
+        </header>
+        <main>
+            <h1>RÉINITIALISER VOTRE MOT DE PASSE</h1>
+            <p>Veuillez renseigner votre matricule et votre adresse email contractuelle :</p>
+            <form action="reset_password.php" method="post">
+                <div class="input-group">
+                    <label for="matricule">Matricule</label>
+                    <input type="text" id="matricule" name="matricule" placeholder="Matricule" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="email" placeholder="Adresse Email" required>
+                </div>
+                <button type="submit" class="btn">CONTINUER</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2024 Attijariwafa bank</p>
+        </footer>
+    </div>
+</body>
+</html>

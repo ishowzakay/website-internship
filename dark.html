@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        a.dark-mode,
+        header.dark-mode,
+        .content-section.dark-mode,
+        table.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        button.toggle-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #004d40;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button.toggle-button img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.createElement('button');
+            toggleButton.innerHTML = '<img src="dark.png" alt="Dark Mode">';
+            toggleButton.className = 'toggle-button';
+
+            toggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                document.querySelectorAll('a').forEach(el => el.classList.toggle('dark-mode'));
+                document.querySelectorAll('header').forEach(el => el.classList.toggle('dark-mode'));
+                document.querySelectorAll('.content-section').forEach(el => el.classList.toggle('dark-mode'));
+                document.querySelectorAll('table').forEach(el => el.classList.toggle('dark-mode'));
+            });
+
+            document.body.appendChild(toggleButton);
+        });
+    </script>
+</body>
+</html>
